@@ -1,0 +1,13 @@
+.vs/
+BikerNetApi/.vs/
+BikerNetApi/BikerNetApi/bin/
+BikerNetApi/BikerNetApi/obj/
+*.vsidx
+.vs/BikerNet-.Net-API/FileContentIndex/read.lock
+.vs/BikerNet-.Net-API/v17/.suo
+.vs/ProjectSettings.json
+*.sqlite
+.vs/VSWorkspaceState.json
+*.v2
+*.lock
+BikerNetApi/.vs/BikerNetApi/v17/.suo
