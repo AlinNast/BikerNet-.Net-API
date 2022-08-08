@@ -1,6 +1,6 @@
 ﻿namespace BikerNetApi.Repository
 {
-    public class FeedPostRepository
+    public class FeedPostRepository : IFeedPostRepository
     {
     }
 }

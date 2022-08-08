@@ -1,6 +1,6 @@
 ﻿namespace BikerNetApi.Repository
 {
-    public class UserRepository
+    public class UserRepository : IUserRepository
     {
     }
 }

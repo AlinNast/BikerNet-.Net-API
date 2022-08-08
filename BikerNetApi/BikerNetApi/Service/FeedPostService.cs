@@ -1,6 +1,6 @@
 ﻿namespace BikerNetApi.Service
 {
-    public class FeedPostService
+    public class FeedPostService : IFeedPostService
     {
     }
 }
