@@ -39,18 +39,13 @@ namespace BikerNetApi.Controllers
             return Ok(post);
         }
 
-        //[HttpPut]
-        //public async Task<ActionResult<List<FeedPost>>> EditPost(FeedPost editedPost) // add [FromBody] Attribute for native data types
-        //{ 
-        //    var post = await _service.FeedPosts.FindAsync(editedPost.Id);
-        //    post.Created = editedPost.Created;
-        //    post.Title = editedPost.Title;
-        //    post.Location = editedPost.Location;
-        //    post.Image = editedPost.Image;
-
-        //    await _service.SaveChangesAsync();
-        //    return Ok(await _service.FeedPosts.ToListAsync());
-        //}
+        [HttpPut]
+        public async Task<ActionResult<FeedPost>> EditPost(FeedPost editedPost) // add [FromBody] Attribute for native data types
+        {
+            _service.EditPost(editedPost);
+            var post = await _service.GetPost(editedPost.Id);
+            return Ok(post);
+        }
 
         //[HttpDelete("{id}")]
         //public async Task<ActionResult<List<FeedPost>>> Delete(Guid id)

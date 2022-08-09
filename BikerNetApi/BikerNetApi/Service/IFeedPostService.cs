@@ -7,6 +7,7 @@ namespace BikerNetApi.Service
         Task<List<FeedPost>> GetAllPosts();
         Task<FeedPost> GetPost(Guid id);
         void CreatePost(FeedPost post);
+        void EditPost(FeedPost editedPost);
 
     }
 }

@@ -25,9 +25,14 @@ namespace BikerNetApi.Service
             return post;
         }
 
-        public async void CreatePost(FeedPost post)
+        public void CreatePost(FeedPost post)
         {
             _postsRepo.CreatePost(post);
+        }
+
+        public void EditPost(FeedPost editedPost)
+        {
+            _postsRepo.EditPost(editedPost);
         }
     }
 }

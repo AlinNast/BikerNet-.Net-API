@@ -24,5 +24,17 @@ namespace BikerNetApi.Repository
             _context.FeedPosts.Add(post);
             _context.SaveChanges();
         }
+
+        public void EditPost(FeedPost editedPost)
+        {
+            var post = _context.FeedPosts.Find(editedPost.Id);
+
+            post.Created = editedPost.Created;
+            post.Title = editedPost.Title;
+            post.Location = editedPost.Location;
+            post.Image = editedPost.Image;
+
+            _context.SaveChanges();
+        }
     }
 }
