@@ -1,6 +1,10 @@
-﻿namespace BikerNetApi.Repository
+﻿using BikerNetApi.Models;
+
+namespace BikerNetApi.Repository
 {
-    public class IUserRepository
+    public interface IUserRepository
     {
+        Task<User> GetUser(string username);
+        void CreateUser(User user);
     }
 }

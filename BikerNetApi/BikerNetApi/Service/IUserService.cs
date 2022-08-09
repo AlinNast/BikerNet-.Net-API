@@ -1,6 +1,11 @@
-﻿namespace BikerNetApi.Service
+﻿using BikerNetApi.Models;
+
+namespace BikerNetApi.Service
 {
-    public class IUserService
+    public interface IUserService
     {
+        void CreateUser(User user);
+
+        Task<User> GetUser(string username);
     }
 }

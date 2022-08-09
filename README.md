@@ -2,9 +2,11 @@
 This is the Api App for my personal project BikerNet implemented with C#
 ##### It features:
 - Datababe created with Entity framework
+- Controller Service Repository Design pattern
 
 ## What I've learned:
 - How to create Api endpoints in the controllers
+- Controller Service Repository design pattern
 
 
 ## How to install:
