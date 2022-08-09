@@ -19,26 +19,25 @@ namespace BikerNetApi.Controllers
         }
     
         [HttpGet]
-        public async Task<ActionResult<List<FeedPost>>> GetAll()
+        public async Task<ActionResult<List<FeedPost>>> GetAllPosts()
         {
             var posts = await _service.GetAllPosts();
             return Ok(posts);
         }
 
-        //[HttpGet("{id}")]
-        //public async Task<ActionResult<FeedPost>> Get(Guid id)
-        //{
-        //    var post = _service.
-        //    return Ok(post);
-        //}
+        [HttpGet("{id}")]
+        public async Task<ActionResult<FeedPost>> GetPost(Guid id)
+        {
+            var post = await _service.GetPost(id);
+            return Ok(post);
+        }
 
-        //[HttpPost]
-        //public async Task<ActionResult<List<FeedPost>>> CreatePost(FeedPost post) // add [FromBody] Attribute for native data types
-        //{
-        //    _service.FeedPosts.Add(post);
-        //    await _service.SaveChangesAsync();
-        //    return Ok(await _service.FeedPosts.ToListAsync());
-        //}
+        [HttpPost]
+        public async Task<ActionResult<FeedPost>> CreatePost(FeedPost post) // add [FromBody] Attribute for native data types
+        {
+            _service.CreatePost(post);
+            return Ok(post);
+        }
 
         //[HttpPut]
         //public async Task<ActionResult<List<FeedPost>>> EditPost(FeedPost editedPost) // add [FromBody] Attribute for native data types

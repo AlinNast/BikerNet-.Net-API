@@ -17,5 +17,17 @@ namespace BikerNetApi.Service
             var posts = await _postsRepo.GetAllPosts();
             return posts;
         }
+
+        public async Task<FeedPost> GetPost(Guid id)
+        {
+            var posts = await _postsRepo.GetAllPosts();
+            var post = posts.Find(x => x.Id == id);
+            return post;
+        }
+
+        public async void CreatePost(FeedPost post)
+        {
+            _postsRepo.CreatePost(post);
+        }
     }
 }
