@@ -47,13 +47,11 @@ namespace BikerNetApi.Controllers
             return Ok(post);
         }
 
-        //[HttpDelete("{id}")]
-        //public async Task<ActionResult<List<FeedPost>>> Delete(Guid id)
-        //{
-        //    var post = await _service.FeedPosts.FindAsync(id);
-        //    _service.FeedPosts.Remove(post);
-        //    await _service.SaveChangesAsync();
-        //    return Ok(await _service.FeedPosts.ToListAsync());
-        //}
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            _service.DeletePost(id);
+            return Ok();
+        }
     }
 }

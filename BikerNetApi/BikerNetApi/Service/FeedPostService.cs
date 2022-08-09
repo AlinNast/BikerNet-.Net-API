@@ -34,5 +34,10 @@ namespace BikerNetApi.Service
         {
             _postsRepo.EditPost(editedPost);
         }
+
+        public void DeletePost(Guid id)
+        {
+            _postsRepo.DeletePost(id);
+        }
     }
 }

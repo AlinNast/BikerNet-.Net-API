@@ -7,5 +7,6 @@ namespace BikerNetApi.Repository
         Task<List<FeedPost>> GetAllPosts();
         void CreatePost(FeedPost feedPost);
         void EditPost(FeedPost feedPost);
+        void DeletePost(Guid id);
     }
 }

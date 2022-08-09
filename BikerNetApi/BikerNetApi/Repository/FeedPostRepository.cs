@@ -36,5 +36,12 @@ namespace BikerNetApi.Repository
 
             _context.SaveChanges();
         }
+
+        public void DeletePost(Guid id)
+        {
+            var post = _context.FeedPosts.Find(id);
+            _context.FeedPosts.Remove(post);
+            _context.SaveChanges();
+        }
     }
 }
