@@ -1,6 +1,9 @@
-﻿namespace BikerNetApi.Repository
+﻿using BikerNetApi.Models;
+
+namespace BikerNetApi.Repository
 {
-    public class IFeedPostRepository
+    public interface IFeedPostRepository
     {
+        Task<List<FeedPost>> GetAllPosts();
     }
 }

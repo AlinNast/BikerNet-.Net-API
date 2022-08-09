@@ -1,6 +1,10 @@
-﻿namespace BikerNetApi.Service
+﻿using BikerNetApi.Models;
+
+namespace BikerNetApi.Service
 {
-    public class IFeedPostService
+    public interface IFeedPostService
     {
+        Task<List<FeedPost>> GetAllPosts();
+
     }
 }

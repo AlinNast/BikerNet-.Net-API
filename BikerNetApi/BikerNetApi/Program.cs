@@ -5,13 +5,16 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+//Creates controllers;
 builder.Services.AddControllers();
+// Injects Service intro container
 builder.Services.AddScoped<IFeedPostService, FeedPostService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+// Injects Repos into services
 builder.Services.AddScoped<IFeedPostRepository, FeedPostRepository>();
+builder.Services.AddScoped<IUserRepository,UserRepository>();
 
-// Used by Entity
+// Used by Entity, Connection to DB
 builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
