@@ -7,6 +7,16 @@ This is the Api App for my personal project BikerNet implemented with C#
 ## What I've learned:
 - How to create Api endpoints in the controllers
 - Controller Service Repository design pattern
+- Dependecy Injection
+- Manage Cors policy
+
+## Challanges:
+- Generic 500 error code
+- Process data from the FrontEnd
+
+## Gallery
+![image](https://user-images.githubusercontent.com/70013669/184984657-5b8d249a-deda-41b8-aa5e-0405b2090106.png)
+
 
 
 ## How to install:
@@ -41,6 +51,8 @@ https://trello.com/b/janwdwXI/biker-net-api-c
 what does everything in program do
 what is to know about controllers
 have sql server installed
+all about DpIn
+all about cors
 sql server management studio optional
 
 make sure this""ConnectionStrings": {
