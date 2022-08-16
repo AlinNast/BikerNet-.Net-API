@@ -1,5 +1,6 @@
 ﻿using BikerNetApi.Data;
 using BikerNetApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BikerNetApi.Repository
 {
@@ -20,8 +21,15 @@ namespace BikerNetApi.Repository
 
         public async Task<User> GetUser(string username)
         {
-            var user = await _context.Users.FindAsync(username);
-            return user;
+            var users = await _context.Users.ToListAsync<User>();
+            foreach (User user in users)
+            {
+                if (user.UserName == username)
+                {
+                    return user;
+                }
+            }
+                return null;
         }
     }
 }

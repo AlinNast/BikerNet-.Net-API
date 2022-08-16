@@ -10,9 +10,9 @@ namespace BikerNetApi.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly UserService _service;
+        private readonly IUserService _service;
 
-        public UserController(UserService service)
+        public UserController(IUserService service)
         {
             _service = service;
         }
@@ -25,13 +25,24 @@ namespace BikerNetApi.Controllers
             var user = await _service.GetUser(username);
             if (user == null) return NotFound();
             if (user.Password != password) return BadRequest("Wrong Password");
-            return Ok();
+            return Ok(user);
         }
 
         // POST api/<UserController>
         [HttpPost]
-        public async Task<IActionResult> CreateUser(User user)
+        public async Task<IActionResult> CreateUser(User newUser)
         {
+
+            User user = new User {
+                Id=Guid.NewGuid(),
+                CreatedDate = DateTime.Now,
+                Name = newUser.Name, 
+                Email = newUser.Email, 
+                Password = newUser.Password, 
+                UserName = newUser.UserName,
+                PhoneNumber = null,
+                Location = null
+            };
             _service.CreateUser(user);
             return Ok();
         }

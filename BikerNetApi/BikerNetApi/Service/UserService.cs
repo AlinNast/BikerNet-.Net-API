@@ -5,9 +5,9 @@ namespace BikerNetApi.Service
 {
     public class UserService : IUserService
     {
-        private readonly UserRepository _userRepo;
+        private readonly IUserRepository _userRepo;
 
-        public UserService(UserRepository userRepository)
+        public UserService(IUserRepository userRepository)
         {
             _userRepo = userRepository;
         }
