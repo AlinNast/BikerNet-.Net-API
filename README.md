@@ -24,8 +24,9 @@ This is the Api App for my personal project BikerNet implemented with C#
 
 2. Install Sql server 
   - from here : https://www.microsoft.com/en-us/sql-server/sql-server-downloads
+    - copy the connection string 
 
-3. Vefify if this in in appsettings.json, if not copy it there:
+3. Vefify if this in in appsettings.json, copy your connection string over the default one:
 `"ConnectionStrings": {
     "DefaultConnection" : "server=localhost\\sqlexpress;database=bikernetdb;trusted_connection=true"
   },`
