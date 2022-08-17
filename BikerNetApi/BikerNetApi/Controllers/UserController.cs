@@ -19,13 +19,14 @@ namespace BikerNetApi.Controllers
 
 
         // GET api/<UserController>/5
-        [HttpGet("{username}/{password}")]
-        public async Task<IActionResult> LogIn(string username, string password)
+        [HttpPost]
+        [Route("login")]
+        public async Task<IActionResult> LogIn(string username, [FromBody]string password)
         {
             var user = await _service.GetUser(username);
             if (user == null) return NotFound();
             if (user.Password != password) return BadRequest("Wrong Password");
-            return Ok(user);
+            return Ok();
         }
 
         // POST api/<UserController>
@@ -36,9 +37,9 @@ namespace BikerNetApi.Controllers
             User user = new User {
                 Id=Guid.NewGuid(),
                 CreatedDate = DateTime.Now,
-                Name = newUser.Name, 
-                Email = newUser.Email, 
-                Password = newUser.Password, 
+                Name = newUser.Name,
+                Email = newUser.Email,
+                Password = newUser.Password,
                 UserName = newUser.UserName,
                 PhoneNumber = null,
                 Location = null

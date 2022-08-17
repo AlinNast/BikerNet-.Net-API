@@ -11,3 +11,4 @@ BikerNetApi/BikerNetApi/obj/
 *.v2
 *.lock
 BikerNetApi/.vs/BikerNetApi/v17/.suo
+BikerNetApi/BikerNetApi/appsettings.json
