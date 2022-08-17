@@ -1,6 +1,9 @@
 # BikerNet-.Net-API
 This is the Api App for my personal project BikerNet implemented with C#
-##### It features:
+
+#### Note! This project is designed to work with this FrontEnd application: https://github.com/AlinNast/BikerNet-React-Frontend
+
+## It features:
 - Datababe created with Entity framework
 - Controller Service Repository Design pattern
 
