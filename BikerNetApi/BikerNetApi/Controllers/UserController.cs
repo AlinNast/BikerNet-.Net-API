@@ -21,12 +21,12 @@ namespace BikerNetApi.Controllers
         // GET api/<UserController>/5
         [HttpPost]
         [Route("login")]
-        public async Task<IActionResult> LogIn(string username, [FromBody]string password)
+        public async Task<ActionResult<User>> LogIn(string username, [FromBody]string password)
         {
             var user = await _service.GetUser(username);
             if (user == null) return NotFound();
             if (user.Password != password) return BadRequest("Wrong Password");
-            return Ok();
+            return Ok(user);
         }
 
         // POST api/<UserController>
