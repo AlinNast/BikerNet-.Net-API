@@ -18,7 +18,7 @@ namespace BikerNetApi.Controllers
         }
 
 
-        // GET api/<UserController>/5
+        // POST api/<UserController>/login
         [HttpPost]
         [Route("login")]
         public async Task<ActionResult<User>> LogIn(string username, [FromBody]string password)
@@ -27,6 +27,15 @@ namespace BikerNetApi.Controllers
             if (user == null) return NotFound();
             if (user.Password != password) return BadRequest("Wrong Password");
             return Ok(user);
+        }
+
+        // GET api/<UserController>/getUser/{id}
+        [HttpGet]
+        [Route("getUser")]
+        public async Task<ActionResult<string>> GetUserNameById(string Id)
+        {
+            string userName = await _service.GetUserById(Id);
+            return Ok(userName);
         }
 
         // POST api/<UserController>
@@ -48,16 +57,16 @@ namespace BikerNetApi.Controllers
             return Ok();
         }
 
-        // PUT api/<UserController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+        //// PUT api/<UserController>/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody] string value)
+        //{
+        //}
 
-        // DELETE api/<UserController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //// DELETE api/<UserController>/5
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //}
     }
 }

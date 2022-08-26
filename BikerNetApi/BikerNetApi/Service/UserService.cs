@@ -21,5 +21,13 @@ namespace BikerNetApi.Service
             var user = await _userRepo.GetUser(username);
             return user;
         }
+
+        public async Task<string> GetUserById(string Id)
+        {
+            Guid guid = Guid.Empty;
+            guid = Guid.Parse(Id);
+            var user = await _userRepo.GetUserById(guid);
+            return user.UserName;
+        }
     }
 }

@@ -7,5 +7,7 @@ namespace BikerNetApi.Service
         void CreateUser(User user);
 
         Task<User> GetUser(string username);
+
+        Task<string> GetUserById(string id);
     }
 }

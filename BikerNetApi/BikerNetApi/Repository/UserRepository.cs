@@ -31,5 +31,18 @@ namespace BikerNetApi.Repository
             }
                 return null;
         }
+
+        public async Task<User> GetUserById(Guid Id)
+        {
+            var users = await _context.Users.ToListAsync<User>();
+            foreach (User user in users)
+            {
+                if (user.Id == Id)
+                {
+                    return user;
+                }
+            }
+            return null;
+        }
     }
 }

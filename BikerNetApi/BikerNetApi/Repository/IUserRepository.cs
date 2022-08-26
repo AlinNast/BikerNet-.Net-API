@@ -6,5 +6,7 @@ namespace BikerNetApi.Repository
     {
         Task<User> GetUser(string username);
         void CreateUser(User user);
+
+        Task<User> GetUserById(Guid Id);
     }
 }
