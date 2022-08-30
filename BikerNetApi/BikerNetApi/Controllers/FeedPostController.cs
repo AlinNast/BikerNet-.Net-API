@@ -33,8 +33,17 @@ namespace BikerNetApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<FeedPost>> CreatePost(FeedPost post) // add [FromBody] Attribute for native data types
+        public async Task<ActionResult<FeedPost>> CreatePost(FeedPost newPost) // add [FromBody] Attribute for native data types
         {
+            var post = new FeedPost()
+            { Id = Guid.NewGuid(),
+            Title = newPost.Title,
+            Description = newPost.Description,
+            Created = DateTime.Now,
+            UserId = newPost.UserId,
+            Location = null,
+            Image = null,
+            };
             _service.CreatePost(post);
             return Ok(post);
         }
